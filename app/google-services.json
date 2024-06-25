@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "478745212992",
+    "project_id": "chatappp-dfdde",
+    "storage_bucket": "chatappp-dfdde.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:478745212992:android:f4d1193fae79722b2b07a5",
+        "android_client_info": {
+          "package_name": "com.huseyin.chatappp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "478745212992-5v19anbbt8h62t793364j513e85nssl4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.huseyin.chatappp",
+            "certificate_hash": "188d07342f63c35bd4ba43c314c3390aee519194"
+          }
+        },
+        {
+          "client_id": "478745212992-k9qubc84np824a9kgds59306ebd3opl7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUAkbfKoeIOaGK93P17EVqbrnJLJl1Od8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "478745212992-k9qubc84np824a9kgds59306ebd3opl7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
