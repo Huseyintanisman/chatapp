@@ -44,6 +44,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.firebase.database)
     val nav_version = "2.7.7"
     val rxJavaVersion = "2.1.1"
     val room_version = "2.6.1"
