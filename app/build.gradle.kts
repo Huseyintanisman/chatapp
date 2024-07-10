@@ -45,6 +45,7 @@ android {
 
 dependencies {
     implementation(libs.firebase.database)
+    implementation(libs.firebase.storage.ktx)
     val nav_version = "2.7.7"
     val rxJavaVersion = "2.1.1"
     val room_version = "2.6.1"
@@ -62,6 +63,7 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
     implementation("androidx.navigation:navigation-compose:$nav_version")
+    implementation ("com.squareup.picasso:picasso:2.71828")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     implementation("com.squareup.retrofit2:retrofit:2.7.2")
     implementation("com.squareup.retrofit2:converter-gson:2.7.2")

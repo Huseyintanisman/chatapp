@@ -6,104 +6,139 @@
     android:orientation="vertical"
     android:background="@color/darkBlueBackGround"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".Activities.ProfileActivity">
 
     <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/gradient_card_border"
         android:layout_width="match_parent"
-        android:background="@drawable/settings_profile_card"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="47dp">
-
+        android:padding="2dp">
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:background="@drawable/settings_profile_card"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="103dp"
-                android:layout_height="95dp"
-                android:background="@drawable/circle_image_card">
+                android:layout_gravity="left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/test"
-                    android:foreground="@drawable/circle_image_card"
-                    android:foregroundGravity="center"
-                    />
+                <LinearLayout
+                    android:layout_width="103dp"
+                    android:layout_height="95dp"
+                    android:background="@drawable/circle_image_card">
+
+                    <ImageView
+                        android:id="@+id/profileImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/test"
+                        android:foreground="@drawable/circle_image_card"
+                        android:foregroundGravity="center" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="4dp"
-                android:textColor="#ACABAB"
-                android:text="Enter your name and optionally add a profile picture if you wish." />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Edit"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="5dp"
-                android:textColor="#31D80B">
-            </TextView>
-
-            <View
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_margin="5dp"
-                android:layout_height="2dp"
-                android:background="#858282">
-            </View>
+                android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:text="Hüseyin Tanişman"
-                android:textColor="#F6E7E7"
-                android:textSize="20dp"
-                >
-            </TextView>
+                <TextView
+                    android:layout_margin="5dp"
+                    android:drawableLeft="@drawable/user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Name"
+                    android:textColor="@color/white">
+                </TextView>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_margin="5dp"
-                android:layout_height="1dp"
-                android:background="#858282">
-            </View>
+                <TextView
+                    android:layout_gravity="left|center"
+                    android:id="@+id/profileNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text=" Hüseyin Tanişman"
+                    android:textColor="#F6E7E7"
+                    android:textSize="20dp">
+                </TextView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_height="1dp"
+                    android:background="#858282">
+                </View>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        </LinearLayout>
+    </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Mail Address"
+        android:textColor="#D7FFFFFF"
+        android:layout_gravity="center">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/settings_profile_card"
+        >
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/settings_profile_card"
-            >
-        </LinearLayout>
+            android:id="@+id/mailAdress"
+            android:layout_margin="10dp"
+            android:text="Mailadress"
+            android:textColor="@color/white"
+            android:layout_gravity="center">
+        </TextView>
+    </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Age"
+        android:textColor="#D7FFFFFF"
+        android:layout_gravity="center">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/settings_profile_card"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ageEditText"
+            android:layout_margin="10dp"
+            android:text="Age"
+            android:textColor="@color/white"
+            android:layout_gravity="center">
+        </TextView>
+    </LinearLayout>
 
 </LinearLayout>

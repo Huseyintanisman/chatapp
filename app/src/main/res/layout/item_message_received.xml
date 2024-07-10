@@ -12,5 +12,5 @@
         android:background="@drawable/received_massage_background_border"
         android:padding="10dp"
         android:textSize="18sp"
-        android:textColor="#BBDBFF"/>
+        android:textColor="#F8736A"/>
 </FrameLayout>

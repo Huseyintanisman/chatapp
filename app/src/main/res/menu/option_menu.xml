@@ -1,13 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/options_menu_profile"
-        android:title="Profile">
-    </item>
+        android:title="Profile" />
+
     <item
         android:id="@+id/options_menu_sign_out"
-        android:title="Sign Out">
-    </item>
+        android:title="Sign Out" />
+
+    <item
+        android:id="@+id/options_menu_create_category"
+        android:title="Create Category" />
 
 </menu>

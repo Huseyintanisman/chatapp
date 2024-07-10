@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/sent_message_background_border"
         android:padding="10dp"
-        android:textColor="#BBDBFF"
+        android:textColor="#DB88F1"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
