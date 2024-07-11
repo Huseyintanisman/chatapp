@@ -1,6 +1,8 @@
 package com.huseyin.chatappp.Activities
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -15,8 +17,10 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var userRef: DatabaseReference
 
     private lateinit var profileNameTextView: TextView
+    private lateinit var profileAboutMeTextView: TextView
     private lateinit var profileAgeTextView: TextView
     private lateinit var profileMailTextView: TextView
+    private lateinit var backToCategoryButton : ImageButton
     private lateinit var profileImageView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,11 +32,21 @@ class ProfileActivity : AppCompatActivity() {
         userRef = database.reference.child("Users").child(auth.currentUser!!.uid)
 
         profileNameTextView = findViewById(R.id.profileNameTextView)
+        profileAboutMeTextView = findViewById(R.id.aboutmeEditText)
         profileAgeTextView = findViewById(R.id.ageEditText)
         profileMailTextView = findViewById(R.id.mailAdress)
         profileImageView = findViewById(R.id.profileImageView)
+        backToCategoryButton = findViewById(R.id.backToCategoryPageButton)
 
         fetchUserProfile()
+
+        backToCategoryButton.setOnClickListener{
+            val intent: Intent = Intent(
+                this, CategoryActivity::class.java
+            )
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun fetchUserProfile() {
@@ -42,9 +56,11 @@ class ProfileActivity : AppCompatActivity() {
                 val age = dataSnapshot.child("age").value.toString()
                 val surname = dataSnapshot.child("surname").value.toString()
                 val avatar = dataSnapshot.child("avatar").value.toString()
+                val aboutme = dataSnapshot.child("aboutme").value.toString()
 
                 profileNameTextView.text = "$name $surname"
                 profileAgeTextView.text = "$age"
+                profileAboutMeTextView.text = "$aboutme"
                 profileMailTextView.text = auth.currentUser?.email
 
                 val avatarResource = getAvatarResource(avatar)
@@ -57,6 +73,7 @@ class ProfileActivity : AppCompatActivity() {
         })
     }
 
+
     private fun getAvatarResource(avatar: String): Int {
         return when (avatar) {
             "avatar1" -> R.drawable.avatar1
@@ -64,4 +81,5 @@ class ProfileActivity : AppCompatActivity() {
             else -> R.drawable.avatar1
         }
     }
+
 }

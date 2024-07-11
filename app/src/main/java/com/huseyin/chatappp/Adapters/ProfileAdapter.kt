@@ -44,10 +44,12 @@ class ProfileAdapter : RecyclerView.Adapter<ProfileAdapter.ProfileViewHolder>() 
         val name = userProfile["name"].toString()
         val surname = userProfile["surname"].toString()
         val avatar = userProfile["avatar"].toString()
+        val aboutme = userProfile["aboutme"].toString()
         val email = auth.currentUser?.email
 
         holder.profileNameTextView.text = "$name $surname"
         holder.profileMailTextView.text = email
+        holder.profileAboutMeTextView.text = aboutme
 
         val avatarUrl = getAvatarUrl(avatar)
         Picasso.get().load(avatarUrl).into(holder.profileImageView)
@@ -67,6 +69,7 @@ class ProfileAdapter : RecyclerView.Adapter<ProfileAdapter.ProfileViewHolder>() 
 
     class ProfileViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val profileNameTextView: TextView = itemView.findViewById(R.id.profileNameTextView)
+        val profileAboutMeTextView: TextView = itemView.findViewById(R.id.aboutMeEditText)
         val profileMailTextView: TextView = itemView.findViewById(R.id.mailAdress)
         val profileImageView: ImageView = itemView.findViewById(R.id.profileImageView)
     }

@@ -4,11 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:orientation="vertical"
-    android:background="@color/darkBlueBackGround"
+    android:background="@drawable/dark_gradient"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
     tools:context=".Activities.ProfileActivity">
+
+    <ImageButton
+        android:layout_margin="10dp"
+        android:id="@+id/backToCategoryPageButton"
+        android:layout_width="32dp"
+        android:layout_height="29dp"
+        android:background="@drawable/gradient_card_border"
+        android:src="@android:drawable/ic_menu_revert" />
+
 
     <LinearLayout
         android:layout_marginLeft="10dp"
@@ -30,15 +38,15 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:layout_width="103dp"
-                    android:layout_height="95dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/circle_image_card">
 
                     <ImageView
                         android:id="@+id/profileImageView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/test"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/avatar1"
                         android:foreground="@drawable/circle_image_card"
                         android:foregroundGravity="center" />
 
@@ -52,7 +60,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:drawableLeft="@drawable/user"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -104,6 +112,8 @@
         android:background="@drawable/settings_profile_card"
         >
         <TextView
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/mailAdress"
@@ -131,11 +141,42 @@
         android:background="@drawable/settings_profile_card"
         >
         <TextView
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/july"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/ageEditText"
             android:layout_margin="10dp"
             android:text="Age"
+            android:textColor="@color/white"
+            android:layout_gravity="center">
+        </TextView>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="About Me"
+        android:textColor="#D7FFFFFF"
+        android:layout_gravity="center">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/settings_profile_card"
+        >
+        <TextView
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/aboutmeEditText"
+            android:layout_margin="10dp"
+            android:text="About Me"
             android:textColor="@color/white"
             android:layout_gravity="center">
         </TextView>

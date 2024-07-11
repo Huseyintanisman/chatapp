@@ -8,14 +8,15 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.huseyin.chatappp.R
 
 class UserDetailsActivity : AppCompatActivity() {
-    private lateinit var selectImageButton: ImageButton
-    private lateinit var saveButton: Button
-    private lateinit var backButton: Button
+    private lateinit var selectImageButton: AppCompatButton
+    private lateinit var saveButton: AppCompatButton
+    private lateinit var backButton: ImageButton
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
     private var selectedAvatar: String = ""
@@ -71,22 +72,25 @@ class UserDetailsActivity : AppCompatActivity() {
     }
 
     private fun saveUserProfile() {
+        val aboutMeText: EditText = findViewById(R.id.aboutMeEditText)
         val nameEditText: EditText = findViewById(R.id.nameEditText)
         val surnameEditText: EditText = findViewById(R.id.surnameEditText)
         val ageEditText: EditText = findViewById(R.id.ageEditText)
 
+        val aboutme = aboutMeText.text.toString().trim()
         val name = nameEditText.text.toString().trim()
         val surname = surnameEditText.text.toString().trim()
         val age = ageEditText.text.toString().trim().toIntOrNull()
 
-        if (name.isEmpty() || surname.isEmpty() || age == null || selectedAvatar.isEmpty()) {
-            Toast.makeText(this, "Please fill in all fields and select an avatar", Toast.LENGTH_SHORT).show()
+        if (name.isEmpty() || surname.isEmpty() || age == null || selectedAvatar.isEmpty() || aboutme.isEmpty()) {
+            Toast.makeText(this, "Please make sure all fields are filled in.", Toast.LENGTH_LONG).show()
             return
         }
 
         val user = auth.currentUser
         if (user != null) {
             val userProfile = HashMap<String, Any>()
+            userProfile["aboutme"] = aboutme
             userProfile["name"] = name
             userProfile["surname"] = surname
             userProfile["age"] = age
